@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Django migrations
+*/migrations/*.py
+!*/migrations/__init__.py
+
+# Database
+db.sqlite3
+db.sqlite3-journal
+
+# Environment
+.env
+*.env
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Static files (collected)
+staticfiles/
+
+# OS
+.DS_Store
+Thumbs.db
