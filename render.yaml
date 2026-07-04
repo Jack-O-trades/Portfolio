@@ -1,0 +1,24 @@
+databases:
+  - name: portfolio-db
+    databaseName: portfolio
+    user: portfolio
+
+services:
+  - type: web
+    name: portfolio-web
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn port.wsgi:application"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: portfolio-db
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
+      - key: DJANGO_DEBUG
+        value: "False"
+      - key: DJANGO_ALLOWED_HOSTS
+        value: "portfolio-web.onrender.com"
