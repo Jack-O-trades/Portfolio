@@ -1,3 +1,2 @@
 Django==6.0.3
-
-# Add other dependencies here if your project uses them, e.g. Pillow
+Pillow>=10.0.0
